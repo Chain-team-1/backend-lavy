@@ -1,5 +1,4 @@
 const {Client} = require('pg');
-//const { clearScreenDown } = require('readline');
 
 const client = new Client({
     host: "localhost",
