@@ -1,6 +1,7 @@
-//const request = require('request');
-//request('https://elephant-api.herokuapp.com/elephants', function (error, response) {
-  //console.error('error:', error); 
-  //console.log('statusCode:', response && response.statusCode); 
-  //console.log('body', body);
-//});
+const http = require('https'); 
+const fs = require('fs');
+
+const file = fs.createWriteStream("elephantData.json");
+const request = http.get("https://elephant-api.herokuapp.com/elephants", function(response) {
+  response.pipe(file);
+});

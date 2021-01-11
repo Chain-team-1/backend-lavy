@@ -10,9 +10,3 @@ const client = new Client({
 
 client.connect();
 
-client.query('select * from name', (err, result) => {
-    if(!err) {
-        console.log(result.rows);
-    }
-    client.end();
-});
